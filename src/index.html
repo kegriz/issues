@@ -5,20 +5,42 @@
     <title>Issues</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=latin-ext" rel="stylesheet">
+    <!-- font proxima nova is paid font so I didn't import it -->
 </head>
 <body>
 
   <div class="app-container">
     <div class="sidebar">
       <div class="blur"></div>
-      <div class="el">
-        <div class="sidebar__header">buttons</div>
-        <div class="sidebar__element">All</div>
-        <div class="sidebar__element">Open</div>
-        <div class="sidebar__element">Closed</div>
+      <div class="sidebar-content">
+        <div class="sidebar-content__header">
+          <div class="buttons">
+            <div class="button button--red">&times;</div>
+            <div class="button button--yellow">&minus;</div>
+            <div class="button button--green">&#9662;</div>
+          </div>
+        </div>
+        <div class="sidebar-content__element selected">
+          <img src="../assets/icon-github.svg">
+          All
+          <span class="filter-count">12</span>
+        </div>
+        <div class="sidebar-content__element">
+          <img src="../assets/icon-open-issue.svg">
+          Open
+          <span class="filter-count">4</span>
+        </div>
+        <div class="sidebar-content__element">
+          <img src="../assets/icon-closed-issue.svg">
+          Closed
+          <span class="filter-count">8</span>
+        </div>
       </div>
     </div>
-    <div class="content">content</div>
+    <div class="content">
+      content&#9733;&#9734;s
+      <div class="date">19-07-2016</div>
+    </div>
   </div>
 
 </body>

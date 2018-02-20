@@ -1,8 +1,10 @@
 @import 'normalize.css';
 @import 'variables.scss';
+@import 'buttons.scss';
 
 * {
     font-family: $Roboto;
+    font-weight: $font_regular;
     font-size: 14px;
     color: $light_grey;
     box-sizing: border-box;
@@ -29,45 +31,74 @@ body {
     width: 150px;
     position: relative;
     overflow: hidden;
-
-    &__header {
-      background-color: $dark_blue;
-      height: 40px;
-      border-radius: 10px 0 0 0;
-    }
-
-    &__element {
-      height: 50px;
-      display: flex;
-      align-items: center;
-      padding-left: 15px;
-      color: $white;
-    }
 }
 
 .blur {
-  background: url("../assets/background.jpg") no-repeat center center fixed;
-  background-size: cover;
-  overflow: hidden;
-  filter: blur(5px);
-  position: absolute;
-  top: -50px;
-  left: -50px;
-  right: -50px;
-  bottom: -50px;
+    background: url("../assets/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+    filter: blur(8px);
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
 }
 
-.el {
-  position: absolute;
-  background-color: $dark_blue_transparent;
-  width: 100%;
-  height: 100%;
-  border-radius: 10px 0 0 10px;
+.sidebar-content {
+    position: absolute;
+    background-color: $dark_blue_transparent;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+
+    &__header {
+        background-color: $dark_blue;
+        height: 40px;
+        border-radius: 10px 0 0 0;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+    }
+
+    &__element {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        padding-left: 15px;
+        color: $white;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+            background-color: $violet_transparent;
+        }
+
+        &:active {
+            background-color: #383a62;
+        }
+
+        img {
+            height: 16px;
+            padding-right: 10px;
+        }
+    }
+}
+
+.selected {
+    background-color: $violet !important;
+}
+
+.filter-count {
+    font-family: $ProximaNova;
+    color: #797985;
+    margin-left: auto;
+    margin-right: 15px;
 }
 
 .content {
-  width: 500px;
-  background-color: $light_grey;
-  border-radius: 0 10px 10px 0;
-  color: $grey;
+    width: 500px;
+    background-color: $light_grey;
+    border-radius: 0 10px 10px 0;
+    color: $grey;
 }
