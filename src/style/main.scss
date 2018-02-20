@@ -97,8 +97,38 @@ body {
 }
 
 .content {
+    overflow: scroll;
     width: 500px;
-    background-color: $light_grey;
+    background-color: $super_light_grey;
     border-radius: 0 10px 10px 0;
+    padding: 10px 16px;
     color: $grey;
+}
+
+.date {
+   color: $light_grey;
+   font-size: 12px;
+   padding-top: 3px;
+}
+
+.issues {
+   color: $dark_grey;
+   padding: 11px;
+   background-color: $white;
+   margin: 6px 0;
+   border: 1px solid $borders_grey;
+   border-radius: 4px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.star {
+  height: 16px;
+  width: 17px;
+  background-image: url("../assets/icon-star-border.svg");
+
+  &--checked {
+    background-image: url("../assets/icon-star.svg");
+  }
 }
