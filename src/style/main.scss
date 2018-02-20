@@ -91,6 +91,7 @@ body {
 
 .filter-count {
     font-family: $ProximaNova;
+    font-weight: $font_regular;
     color: #797985;
     margin-left: auto;
     margin-right: 15px;
@@ -121,14 +122,4 @@ body {
    display: flex;
    align-items: center;
    justify-content: space-between;
-}
-
-.star {
-  height: 16px;
-  width: 17px;
-  background-image: url("../assets/icon-star-border.svg");
-
-  &--checked {
-    background-image: url("../assets/icon-star.svg");
-  }
 }
