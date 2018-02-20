@@ -1,0 +1,10 @@
+@import 'normalize.css';
+@import 'variables.scss';
+
+* {
+    box-sizing: border-box;
+}
+
+#id {
+  color: $red;
+}
