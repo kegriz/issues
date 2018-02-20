@@ -2,6 +2,9 @@
 @import 'variables.scss';
 
 * {
+    font-family: $Roboto;
+    font-size: 14px;
+    color: $light_grey;
     box-sizing: border-box;
 }
 
@@ -9,8 +12,62 @@ body {
     background: url("../assets/background.jpg") no-repeat center center fixed;
     background-size: cover;
     background-color: #cccccc;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#id {
-  color: $red;
+.app-container {
+    height: 500px;
+    width: 650px;
+    color: $red;
+    display: flex;
+}
+
+.sidebar {
+    width: 150px;
+    position: relative;
+    overflow: hidden;
+
+    &__header {
+      background-color: $dark_blue;
+      height: 40px;
+      border-radius: 10px 0 0 0;
+    }
+
+    &__element {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      padding-left: 15px;
+      color: $white;
+    }
+}
+
+.blur {
+  background: url("../assets/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  overflow: hidden;
+  filter: blur(5px);
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  right: -50px;
+  bottom: -50px;
+}
+
+.el {
+  position: absolute;
+  background-color: $dark_blue_transparent;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+}
+
+.content {
+  width: 500px;
+  background-color: $light_grey;
+  border-radius: 0 10px 10px 0;
+  color: $grey;
 }

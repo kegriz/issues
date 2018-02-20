@@ -3,7 +3,6 @@ import $ from 'jquery';
 
 $( () => {
 
-  // document.getElementById("id").innerHTML = "Hello Issues";
-  $("#id").html("Hello Issues");
+  // document.getElementById("iid").innerHTML = "Hello Issues";
 
 });
