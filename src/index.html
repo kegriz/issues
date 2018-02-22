@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <title>Issues</title>
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=latin-ext" rel="stylesheet">
-    <!-- font ProximaNova is paid font so I didn't import it -->
+    <!-- font ProximaNova is paid font so I didn't import it, but declared in css -->
 </head>
 <body>
 
@@ -16,87 +16,35 @@
         <div class="sidebar-content__header">
           <div class="buttons">
             <div class="button button--red JS-exit">&times;</div>
-            <div class="button button--yellow">&minus;</div>
-            <div class="button button--green">&#9662;</div>
+            <div class="button button--yellow JS-hide">&minus;</div>
+            <div class="button button--green JS-resize">&#9662;</div>
           </div>
         </div>
-        <div class="sidebar-content__element selected">
+        <div class="sidebar-content__element selected JS-tab-handler">
           <img src="../assets/icon-github.svg">
           All
-          <span class="filter-count">12</span>
+          <span id="JS-all" class="filter-count"></span>
         </div>
-        <div class="sidebar-content__element">
+        <div class="sidebar-content__element JS-tab-handler">
           <img src="../assets/icon-open-issue.svg">
           Open
-          <span class="filter-count">4</span>
+          <span id="JS-open" class="filter-count"></span>
         </div>
-        <div class="sidebar-content__element">
+        <div class="sidebar-content__element JS-tab-handler">
           <img src="../assets/icon-closed-issue.svg">
           Closed
-          <span class="filter-count">8</span>
+          <span id="JS-done" class="filter-count"></span>
         </div>
       </div>
     </div>
     <div class="content">
-
-      <div class="date">19-07-2016</div>
-      <div class="issues">
-        Page changes
-        <div class="star star--checked"></div>
-      </div>
-      <div class="issues">
-        Review of last issues
-        <span class="star star--checked"></span>
-      </div>
-
-      <div class="date">18-07-2016</div>
-      <div class="issues">
-        Visual UI Update Review
-        <span class="star"></span>
-      </div>
-      <div class="issues">
-        Sidebar changes
-        <span class="star"></span>
-      </div>
-
-      <div class="date">15-07-2016</div>
-      <div class="issues">
-        Crash update
-        <span class="star"></span>
-      </div>
-      <div class="issues">
-        Page visual UI Update Review
-        <span class="star star--checked"></span>
-      </div>
-      <div class="issues">
-        Sidebar update
-        <span class="star"></span>
-      </div>
-
-      <div class="date">14-07-2016</div>
-      <div class="issues">
-        Crash issue
-        <span class="star star--checked"></span>
-      </div>
-      <div class="issues">
-        Visual update & Crash resolve
-        <span class="star star--checked"></span>
-      </div>
-      <div class="issues">
-        Database fix
-        <span class="star star--checked"></span>
-      </div>
-      <div class="issues">
-        Sidebar changes
-        <span class="star star--checked"></span>
-      </div>
-      <div class="issues">
-        Sidebar created
-        <span class="star star--checked"></span>
-      </div>
-
+      <div class="tab JS-tab tab--active"></div>
+      <div class="tab JS-tab"></div>
+      <div class="tab JS-tab"></div>
     </div>
   </div>
+
+  <div class="minimized">issues</div>
 
 </body>
 </html>

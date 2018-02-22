@@ -3,11 +3,14 @@
 @import 'buttons.scss';
 
 * {
+    box-sizing: border-box;
+}
+
+html {
     font-family: $Roboto;
     font-weight: $font_regular;
     font-size: 14px;
     color: $light_grey;
-    box-sizing: border-box;
 }
 
 body {
@@ -23,8 +26,26 @@ body {
 .app-container {
     height: 500px;
     width: 650px;
-    color: $red;
     display: flex;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0.5s, opacity 0.5s linear, height 0.5s, width 0.5s;
+
+    &--close {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    &--hide {
+        visibility: hidden;
+        opacity: 0;
+        height: 0;
+    }
+
+    &--resize {
+        height: 100%;
+        width: 100%;
+    }
 }
 
 .sidebar {
@@ -48,7 +69,7 @@ body {
 .sidebar-content {
     position: absolute;
     background-color: $dark_blue_transparent;
-    width: 100%;
+    width: 150px;
     height: 100%;
     border-radius: 10px 0 0 10px;
 
@@ -75,7 +96,7 @@ body {
         }
 
         &:active {
-            background-color: #383a62;
+            background-color: $violet_light;
         }
 
         img {
@@ -98,12 +119,17 @@ body {
 }
 
 .content {
-    overflow: scroll;
+    overflow-y: scroll;
     width: 500px;
     background-color: $super_light_grey;
     border-radius: 0 10px 10px 0;
     padding: 10px 16px;
     color: $grey;
+
+    &--resized {
+      width: 100%;
+      width: calc(100vw - 150px);
+    }
 }
 
 .date {
@@ -122,4 +148,40 @@ body {
    display: flex;
    align-items: center;
    justify-content: space-between;
+}
+
+.tab {
+    display: none;
+    &--active {
+        display: block;
+    }
+}
+
+.minimized {
+  cursor: pointer;
+  user-select: none;
+  background-color: $violet;
+  color: $white;
+  height: 80px;
+  width: 80px;
+  border: 3px solid white;
+  border-radius: 40px;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+  bottom: 50px;
+  right: 50px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.33s, opacity 0.33s linear;
+
+  &:hover {
+      background-color: $violet_light;
+  }
+
+  &--visable {
+      visibility: visible;
+      opacity: 1;
+  }
 }
