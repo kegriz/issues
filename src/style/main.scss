@@ -8,13 +8,13 @@
 
 html {
     font-family: $Roboto;
-    font-weight: $font_regular;
+    font-weight: $fontRegular;
     font-size: 14px;
-    color: $light_grey;
+    color: $lightGrey;
 }
 
 body {
-    background: url("../assets/background.jpg") no-repeat center center fixed;
+    background: url('../assets/background.jpg') no-repeat center center fixed;
     background-size: cover;
     background-color: #cccccc;
     height: 100vh;
@@ -55,7 +55,7 @@ body {
 }
 
 .blur {
-    background: url("../assets/background.jpg") no-repeat center center fixed;
+    background: url('../assets/background.jpg') no-repeat center center fixed;
     background-size: cover;
     overflow: hidden;
     filter: blur(8px);
@@ -68,13 +68,13 @@ body {
 
 .sidebar-content {
     position: absolute;
-    background-color: $dark_blue_transparent;
+    background-color: $darkBlueTransparent;
     width: 150px;
     height: 100%;
     border-radius: 10px 0 0 10px;
 
     &__header {
-        background-color: $dark_blue;
+        background-color: $darkBlue;
         height: 40px;
         border-radius: 10px 0 0 0;
         display: flex;
@@ -92,11 +92,11 @@ body {
         user-select: none;
 
         &:hover {
-            background-color: $violet_transparent;
+            background-color: $violetTransparent;
         }
 
         &:active {
-            background-color: $violet_light;
+            background-color: $violetLight;
         }
 
         img {
@@ -112,7 +112,7 @@ body {
 
 .filter-count {
     font-family: $ProximaNova;
-    font-weight: $font_regular;
+    font-weight: $fontRegular;
     color: #797985;
     margin-left: auto;
     margin-right: 15px;
@@ -121,29 +121,28 @@ body {
 .content {
     overflow-y: scroll;
     width: 500px;
-    background-color: $super_light_grey;
+    background-color: $superLightGrey;
     border-radius: 0 10px 10px 0;
     padding: 10px 16px;
     color: $grey;
 
     &--resized {
-      width: 100%;
       width: calc(100vw - 150px);
     }
 }
 
 .date {
-   color: $light_grey;
+   color: $lightGrey;
    font-size: 12px;
    padding-top: 3px;
 }
 
 .issues {
-   color: $dark_grey;
+   color: $darkGrey;
    padding: 11px;
    background-color: $white;
    margin: 6px 0;
-   border: 1px solid $borders_grey;
+   border: 1px solid $bordersGrey;
    border-radius: 4px;
    display: flex;
    align-items: center;
@@ -177,7 +176,7 @@ body {
   transition: visibility 0s linear 0.33s, opacity 0.33s linear;
 
   &:hover {
-      background-color: $violet_light;
+      background-color: $violetLight;
   }
 
   &--visable {

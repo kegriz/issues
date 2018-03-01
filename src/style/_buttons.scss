@@ -4,7 +4,7 @@
   color: transparent;
 
   &:hover {
-    color: $dark_grey;
+    color: $darkGrey;
   }
 }
 
@@ -44,9 +44,9 @@
   cursor: pointer;
   height: 16px;
   width: 17px;
-  background-image: url("../assets/icon-star-border.svg");
+  background-image: url('../assets/icon-star-border.svg');
 
   &--checked {
-    background-image: url("../assets/icon-star.svg");
+    background-image: url('../assets/icon-star.svg');
   }
 }

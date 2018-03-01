@@ -6,40 +6,40 @@ const qsa = (elements) => document.querySelectorAll(elements);
 
 // counting Issues
 function countingIssues() {
-    let count_done = 0, count_open = 0;
+    let countDone = 0, countOpen = 0;
     for(var i in data) {
         for(var n in data[i]) {
-            if( data[i][n].progress == true ) {
-                count_done++;
+            if( data[i][n].progress ) {
+                countDone++;
             } else {
-                count_open++;
+                countOpen++;
             }
         }
     }
-    qs("#JS-all").innerHTML = count_open + count_done;
-    qs("#JS-open").innerHTML = count_open;
-    qs("#JS-done").innerHTML = count_done;
+    qs("#JS-all").innerHTML = countOpen + countDone;
+    qs("#JS-open").innerHTML = countOpen;
+    qs("#JS-done").innerHTML = countDone;
 }
 
 // show tabs content
 function getContent() {
     let all = "", done = "", open = "";
     for(var i in data) {
-        all += '<div class="date">'+i+'</div>';
+        all += `<div class="date">${i}</div>`;
         let c_done = 0, c_open = 0;
         for(var n in data[i]) {
             data[i][n].progress === true ? c_done++ : c_open++ ;
         }
-        if( c_done > 0 ) done += '<div class="date">'+i+'</div>';
-        if( c_open > 0 ) open += '<div class="date">'+i+'</div>';
+        if( c_done > 0 ) done += `<div class="date">${i}</div>`;
+        if( c_open > 0 ) open += `<div class="date">${i}</div>`;
         for(var n in data[i]) {
             var star = "";
             data[i][n].progress === true ? star = " star--checked" : star = "";
-            all += '<div id='+data[i][n].id+' class="issues">'+data[i][n].text+'<div class="star'+star+'"></div></div>';
+            all += `<div id="${data[i][n].id}" class="issues">${data[i][n].text}<div class="star${star}"></div></div>`;
             if( data[i][n].progress === true ) {
-              done += '<div id='+data[i][n].id+' class="issues">'+data[i][n].text+'<div class="star'+star+'"></div></div>';
+              done += `<div id="${data[i][n].id}" class="issues">${data[i][n].text}<div class="star${star}"></div></div>`;
             } else {
-              open += '<div id='+data[i][n].id+' class="issues">'+data[i][n].text+'<div class="star'+star+'"></div></div>';
+              open += `<div id="${data[i][n].id}" class="issues">${data[i][n].text}<div class="star${star}"></div></div>`;
             }
         }
     }
@@ -56,7 +56,7 @@ function getContent() {
             for(var i in data) {
                 for(var n in data[i]) {
                     if( data[i][n].id == clicked_id ) {
-                        if( data[i][n].progress == true ) {
+                        if( data[i][n].progress ) {
                             data[i][n].progress = false;
                         } else {
                             data[i][n].progress = true;
