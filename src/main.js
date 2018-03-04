@@ -1,15 +1,46 @@
 import './style/main.scss';
-import { data } from './data.js';
+import { staticData } from './data.js';
 
 const qs = (element) => document.querySelector(element);
 const qsa = (elements) => document.querySelectorAll(elements);
+
+function parseDate(str_date) {
+  console.log(str_date);
+  return new Date(Date.parse(str_date));
+}
+
+let data = {};
+
+//ajax
+fetch('https://api.github.com/repos/facebook/react/issues?page=1&state=all')
+  .then(response => {
+    if (response.ok) {
+      return response.json()
+    } else {
+      data = staticData;  // if GitHub API fails, static data loaded
+      getContent();
+      return Promise.reject(response)
+    }
+  })
+  .then(function(myJson) {
+    myJson.forEach((n, i) => {
+      var longDate = n.created_at;
+      var shortDate = longDate.substr(0,10);
+      if(!data[shortDate]) data[shortDate]=[];
+      data[shortDate].push(n);
+    });
+    getContent();
+  })
+  .catch(error => {
+    if (error.status === 404) console.log('Oh nooo! Connection error... static data loaded')
+  });
 
 // counting Issues
 function countingIssues() {
     let countDone = 0, countOpen = 0;
     for(var i in data) {
         for(var n in data[i]) {
-            if( data[i][n].progress ) {
+            if( data[i][n].state === "closed" ) {
                 countDone++;
             } else {
                 countOpen++;
@@ -28,18 +59,18 @@ function getContent() {
         all += `<div class="date">${i}</div>`;
         let c_done = 0, c_open = 0;
         for(var n in data[i]) {
-            data[i][n].progress === true ? c_done++ : c_open++ ;
+            data[i][n].state === "closed" ? c_done++ : c_open++ ;
         }
         if( c_done > 0 ) done += `<div class="date">${i}</div>`;
         if( c_open > 0 ) open += `<div class="date">${i}</div>`;
         for(var n in data[i]) {
             var star = "";
-            data[i][n].progress === true ? star = " star--checked" : star = "";
-            all += `<div id="${data[i][n].id}" class="issues">${data[i][n].text}<div class="star${star}"></div></div>`;
-            if( data[i][n].progress === true ) {
-              done += `<div id="${data[i][n].id}" class="issues">${data[i][n].text}<div class="star${star}"></div></div>`;
+            data[i][n].state === "closed" ? star = " star--checked" : star = "";
+            all += `<div id="${data[i][n].id}" class="issues"><div class="issues__content">${data[i][n].title}</div><div class="star${star}"></div></div>`;
+            if( data[i][n].state === "closed" ) {
+              done += `<div id="${data[i][n].id}" class="issues"><div class="issues__content">${data[i][n].title}</div><div class="star${star}"></div></div>`;
             } else {
-              open += `<div id="${data[i][n].id}" class="issues">${data[i][n].text}<div class="star${star}"></div></div>`;
+              open += `<div id="${data[i][n].id}" class="issues"><div class="issues__content">${data[i][n].title}</div><div class="star${star}"></div></div>`;
             }
         }
     }
@@ -56,10 +87,10 @@ function getContent() {
             for(var i in data) {
                 for(var n in data[i]) {
                     if( data[i][n].id == clicked_id ) {
-                        if( data[i][n].progress ) {
-                            data[i][n].progress = false;
+                        if( data[i][n].state === "closed" ) {
+                            data[i][n].state = "open";
                         } else {
-                            data[i][n].progress = true;
+                            data[i][n].state = "closed";
                         }
                         setTimeout(function(){
                             getContent();

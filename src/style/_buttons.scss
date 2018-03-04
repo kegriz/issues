@@ -45,6 +45,7 @@
   height: 16px;
   width: 17px;
   background-image: url('../assets/icon-star-border.svg');
+  flex-shrink: 0;
 
   &--checked {
     background-image: url('../assets/icon-star.svg');

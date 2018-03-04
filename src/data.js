@@ -2,71 +2,71 @@ var jsonData = {
   "19-07-2016": [
     {
       "id": 12,
-      "text": "Page changes",
-      "progress": true
+      "title": "Page changes",
+      "state": "closed"
     },
     {
       "id": 11,
-      "text": "Review of last issues",
-      "progress": true
+      "title": "Review of last issues",
+      "state": "closed"
     }
   ],
   "18-07-2016": [
     {
       "id": 10,
-      "text": "Visual UI Update Review",
-      "progress": false
+      "title": "Visual UI Update Review",
+      "state": "open"
     },
     {
       "id": 9,
-      "text": "Sidebar changes",
-      "progress": false
+      "title": "Sidebar changes",
+      "state": "open"
     }
   ],
   "15-07-2016": [
     {
       "id": 8,
-      "text": "Crash update",
-      "progress": false
+      "title": "Crash update",
+      "state": "open"
     },
     {
       "id": 7,
-      "text": "Page visual UI Update Review",
-      "progress": true
+      "title": "Page visual UI Update Review",
+      "state": "closed"
     },
     {
       "id": 6,
-      "text": "Sidebar update",
-      "progress": false
+      "title": "Sidebar update",
+      "state": "open"
     }
   ],
   "14-07-2016": [
     {
       "id": 5,
-      "text": "Crash issue",
-      "progress": true
+      "title": "Crash issue",
+      "state": "closed"
     },
     {
       "id": 4,
-      "text": "Visual update & Crash resolve",
-      "progress": true
+      "title": "Visual update & Crash resolve",
+      "state": "closed"
     },
     {
       "id": 3,
-      "text": "Database fix",
-      "progress": true
+      "title": "Database fix",
+      "state": "closed"
     },
     {
       "id": 2,
-      "text": "Sidebar changes",
-      "progress": true
+      "title": "Sidebar changes",
+      "state": "closed"
     },
     {
       "id": 1,
-      "text": "Sidebar created",
-      "progress": true
+      "title": "Sidebar created",
+      "state": "closed"
     }
   ]
 }
 
-export const data = jsonData;
+export const staticData = jsonData;
